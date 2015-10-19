@@ -10,5 +10,5 @@ This theme needs Types and Redux plugins.
 
 == Credits ==
 
-Design by Antoine Marino: http://amarinotportfolio.fr
+Design by Antoine Marinot: http://amarinotportfolio.fr
 Development by Cuaybroweb: http://www.cuyabroweb.com
