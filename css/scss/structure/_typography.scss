@@ -1,0 +1,195 @@
+//URL ........... http://typeplate.com
+// VERSION ....... 2.1.0
+// Github ........ https://github.com/typeplate/typeplate.github.io
+// AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+// LICENSE ....... Creative Commmons Attribution 3.0
+// LICENSE URL ... http://creativecommons.org/licenses/by/3.0
+
+// $Base Variables
+// -------------------------------------//
+// General base styles for type
+
+//the serif boolean var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss";
+$typl8-serif-boolean: false !default;
+// $typl8-custom-font: false !default;
+$typl8-custom-font: gotham_lightregular, arial;
+$typl8-font-family: if($typl8-serif-boolean, serif, sans-serif) !default;
+$typl8-font-weight: normal !default;
+$typl8-line-height: 1.65 !default;
+// $typl8-font-size: 112.5 !default;
+$typl8-font-size: 100 !default;
+// $typl8-font-size: 100 !default;
+$typl8-font-base: 16 * ($typl8-font-size/100) !default;
+$typl8-measure: $typl8-font-base * $typl8-line-height;
+
+
+
+$typl8-measure: $typl8-font-base * $typl8-line-height;
+
+// $Typescale
+// -------------------------------------//
+// Greek heading names and scale using base font-size
+//
+// typl8-tera                    117 = 18 × 6.5
+// typl8-giga                     90 = 18 × 5
+// typl8-mega                     72 = 18 × 4
+// typl8-alpha                    60 = 18 × 3.3333
+// typl8-beta                     48 = 18 × 2.6667
+// typl8-gamma                    36 = 18 × 2
+// typl8-delta                    24 = 18 × 1.3333
+// typl8-epsilon                  21 = 18 × 1.1667
+// typl8-zeta                     18 = 18 × 1
+
+$typl8-scale: (
+  typl8-tera: 117,
+  typl8-giga: 90,
+  typl8-mega: 72,
+  typl8-alpha: 60,
+  typl8-beta: 48,
+  typl8-gamma: 36,
+  typl8-delta: 24,
+  typl8-epsilon: 21,
+  typl8-zeta: 18,
+) !default;
+
+$typl8-headings: (
+  // h1: typl8-mega,
+  // h2: typl8-alpha,
+  // h3: typl8-beta,
+  // h4: typl8-gamma,
+  // h5: typl8-delta,
+  // h6: typl8-zeta
+
+  h1: typl8-alpha,
+  h2: typl8-beta,
+  h3: typl8-gamma,
+  h4: typl8-delta,
+  h5: typl8-epsilon,
+  h6: typl8-zeta
+) !default;
+
+// $Typescale Unit
+// -------------------------------------//
+
+$typl8-typescale-unit: rem !default;
+
+// $Context Calculator
+// -------------------------------------//
+// target / context = result
+//
+// @example             p { font-size: typl8-context-calc(24, 16, px, 18 * 1.65); }
+
+@function typl8-context-calc($scale, $base, $value) {
+  @return ($scale/$base) + $value;
+}
+
+// $Measure-Margin
+// -------------------------------------//
+// divide 1 unit of measure by given font-size & return relative value
+
+@function typl8-measure-margin($scale, $measure, $value) {
+  $pixelValue: $scale/$measure; // ($measure/$scale) issue#40 https://github.com/typeplate/starter-kit/issues/40
+  $remValue: $pixelValue * $typl8-font-base;
+
+  @if $value == rem {
+    @return $pixelValue + $value;
+  } @else if $value == em {
+    @return ($remValue/$scale) + $value;
+  } @else {
+    @return $remValue * 1px;
+  }
+}
+
+// $Typescale
+// -------------------------------------//
+
+@mixin typl8-typescale($scale, $base, $value, $measure:"") {
+  @if $value == rem {
+    font-size: $scale * 1px;
+    font-size: typl8-context-calc($scale, $base, $value);
+  } @else if $value == em {
+    font-size: typl8-context-calc($scale, $base, $value);
+  } @else {
+    font-size: $scale * 1px;
+  }
+
+  @if $measure != "" {
+    @if $value == rem {
+      margin-bottom: typl8-measure-margin($scale, $measure, $value: px);
+      margin-bottom: typl8-measure-margin($scale, $measure, $value);
+    } @else if $value == em {
+      margin-bottom: typl8-measure-margin($scale, $measure, $value: em);
+    } @else {
+      margin-bottom: typl8-measure-margin($scale, $measure, $value);
+    }
+  }
+}
+
+// $Headings Styles
+// -------------------------------------//
+// Heading scale. Call from actual headings or other elements.
+// Special Props to Harry Roberts for this trick.
+//
+// @markup                      <h6 class="typl8-giga">Awesome Headline</h6>
+//                              <p class="typl8-tera">A story about a dude</p>
+// optimizeLegibility           Enables ligatures and kerning
+// single line height           Fixes large spaces when a heading wraps two lines
+
+%typl8-hN {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
+  // color: $typl8-heading-color;
+}
+
+@mixin typl8-headings() {
+  @each $name, $size in $typl8-scale {
+    .#{$name} {
+      @extend %typl8-hN;
+      @include typl8-typescale(
+        $size,
+        $typl8-font-base,
+        $typl8-typescale-unit,
+        $typl8-measure
+      );
+    }
+  }
+}
+
+@mixin typl8-headings-style() {
+  @each $h, $size in $typl8-headings {
+    #{$h} {
+      @extend .#{$size};
+    }
+  }
+}
+
+@include typl8-headings;
+@include typl8-headings-style;
+
+
+
+// $Paragraphs Variables
+// -------------------------------------//
+// Controls paragraphs vertical whitespace
+// for subsequent paragraphs.
+//
+// $typl8-paragraph-spacing             [<'false'> | <'true'>]
+
+$typl8-paragraph-spacing: true !default;
+// $typl8-indent-val: 1.5em !default;
+$typl8-indent-val: 0.75em !default;
+
+// $Parargraphs Styles
+// -------------------------------------//
+
+p {
+  margin: auto auto $typl8-indent-val;
+  @if $typl8-paragraph-spacing == false {
+    & + p {
+      text-indent: $typl8-indent-val;
+      margin-top: -$typl8-indent-val;
+    }
+  }
+}

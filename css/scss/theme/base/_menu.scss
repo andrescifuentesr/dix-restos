@@ -1,0 +1,124 @@
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	clear: both;
+	display: block;
+	// float: left;
+	width: 100%;
+	margin: 0 0 0;
+	border-top: 1px solid #7b7b7b;
+	text-align: center;
+	@include mq(lap) {  }
+}
+
+.main-navigation .menu {
+	display: none;
+	@include mq(lap) { display:flex; justify-content: space-between; }
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	text-align: center;
+}
+
+.main-navigation li {
+	// float: left;
+	position: relative;
+	display: block;
+	@include mq(lap) { display: inline-block; }
+}
+
+.main-navigation a {
+	font-family: 'gotham_mediumregular';
+	display: block;
+	text-decoration: none;
+	color:#404040;
+	padding: 0.5em 0;
+	border-bottom:0 solid transparent;
+	transition: .3s all;
+	@include mq(lap) { padding: 1em 0; }
+
+	&:hover {
+		border-bottom: 4px solid $primary;
+	}
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 1.5em;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul ul li {
+
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+}
+
+.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
+}
+
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a {
+	border-bottom: 4px solid $primary;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.menu-toggle {
+	text-align: center;
+	font-size: 1.25em;
+	display: inline-block;
+	color: #fff;
+	border:none;
+	padding:  .5em;
+	margin: 0.5em 0;
+	background: $primary;
+}
+
+@media screen and (min-width: $break-point-lap ) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}

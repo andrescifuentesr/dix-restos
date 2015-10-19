@@ -1,0 +1,98 @@
+.privatisation-form {
+	background: #fff;
+	padding: 1em;
+	@include mq(tablet) { }
+	@include mq(lap) { }
+	@include mq(desk) { padding: 1em 4em; }
+}
+
+.wpcf7,
+//#wpcf7-f101-p14-o1 
+	{
+	width:100%;
+
+	span {
+		width: 100%;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"] {
+		margin-bottom: 1em;
+		width: 100%;
+		padding: 0.75em 0.5em;
+		border-radius:0;
+		border:1px solid;
+	}
+
+	textarea {
+		margin-bottom: 0.5em;
+		width: 100%;
+		padding: 0.5em;
+		border-radius:0;
+		border:1px solid;
+	}
+
+	.first-name input{
+		width: 100%;
+		margin-right: 0;
+		@include mq(tablet) {width: 49%; margin-right: 2%; float: left; }
+	}
+
+	.last-name input {
+		width: 100%;
+		margin-right: 0; 
+		@include mq(tablet) {margin-right: 0; width: 49%; float: left;}
+	}
+
+	.submit-button {
+		text-align: right;
+	}
+
+	input[type="submit"] {
+		margin: 0 0 0;
+		background: url('../../../img/button-send.jpg') no-repeat;
+		height: 42px;
+		padding: 0 1.5em 0 4em;
+		border: 1px solid;
+		text-transform: uppercase;
+		position: relative;
+		transition: 0.2s all ease-in;
+		@include clearfix;
+
+		&:hover {
+			//background-color: $green-principal;
+			color: #D20001;
+		}
+	}
+
+	//placeholder
+	::-webkit-input-placeholder {font-size:0.85em; text-transform: uppercase;}
+	:-moz-placeholder			{font-size:0.85em; text-transform: uppercase;}
+	::-moz-placeholder 			{font-size:0.85em; text-transform: uppercase;}
+	:-ms-input-placeholder 		{font-size:0.85em; text-transform: uppercase;}
+
+	//errors
+	span.wpcf7-not-valid-tip {
+		color: #E22D2D;
+	}
+
+	div.wpcf7-validation-errors {
+		background: #dd0b14;
+		color: #fff;
+		border:none;
+		padding:0.5em 0;
+		text-align:center;
+	}
+
+	div.wpcf7-mail-sent-ok {
+		background: #332c58;
+		color: #fff;
+		border:none;
+		padding:0.5em 0;
+		text-align:center;
+	}
+}

@@ -1,0 +1,133 @@
+//========================
+// first section
+//========================
+.home-template {
+	img {margin: 0 auto;}
+}
+
+.home-welcome, .home-middle {
+	background: #fff;
+	margin-bottom: .5em;
+	@include mq(tablet) { margin-bottom: 1em; }
+}
+
+.home-welcome__image {
+	position: relative;
+
+	.home-welcome__legend--white {
+		color: #fff;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		border-color: #fff;
+		padding: 1em 0;
+		text-transform: uppercase;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 70%;
+		transform: translate(-50%, -50%);
+		@include mq(tablet) { width: 50%; }
+	}
+}
+
+.home-welcome__content {
+	text-align: center;
+	padding: 1em .5em 0;
+	font-family: 'gotham_bookregular';
+	@include mq(tablet) { padding: 3em 2em 0; }
+
+
+	.button--home_link {
+		display: inline-block;
+		border: 1px solid #000;
+		text-transform: uppercase;
+		background: #fff;
+		padding: .75em 0.5em;
+		margin-top:  .25em;
+		margin-bottom: .5em;
+		transition: .3s all;
+		@include mq(tablet) { margin-top: 1em; padding: 1em 3em; }
+
+		&:hover {
+			border: 1px solid $primary;
+		}
+	}
+}
+
+//========================
+// middle - slider
+//========================
+.home-middle__slider {
+	vertical-align: middle;
+
+	.flex-control-paging li a {
+
+	}
+
+	.flex-control-paging li a:hover {
+		background: #fff;
+	}
+
+	.flex-control-paging li a.flex-active {
+		background: #fff;
+	}
+
+}
+
+.home-middle__content {
+	position: relative;
+	vertical-align: middle;
+	margin: 1em 0;
+	@include mq(lap) { margin: 0; 
+		
+		.legend--button {
+			width: 80%;
+		}
+
+	}
+
+}
+
+
+//========================
+// last section
+//========================
+.home-bottom {
+	background: #fff;
+	@include clearfix;
+}
+
+.home-bottom__left {
+	position: relative;
+	@include mq(lap) { width:50%; float:left; }
+}
+
+.home-bottom__right {
+	position: relative;
+	@include mq(lap) { width:50%; float:left; }
+}
+
+.legend--wrapper {
+	background:#fff; 
+	position: relative;
+	vertical-align: middle;
+	margin: 1em 0;
+	@include mq(lap) { 
+		margin: 0; 
+
+		&::after {
+			content: '';
+			position: absolute;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-left: 10px solid #fff;
+			top: 50%;
+			right: -10px;
+			transform: translate(0, -50%);
+		}
+	}
+}
+
+.home-bottom__image {
+	vertical-align: middle;	
+}

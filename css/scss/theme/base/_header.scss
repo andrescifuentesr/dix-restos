@@ -1,0 +1,73 @@
+.site-header {
+	color:#404040;
+	background: #fff;
+
+	.site-header__wrapper {
+		width: 100%;
+		padding: 0 1%;
+		@include mq(tablet) { padding: 0 1em; }
+		@include mq(lap) { }
+		@include mq(desk) { max-width: $max-width; margin: 0 auto; padding: 0;}
+	}
+
+	// @include mq(tablet) { }
+	// @include mq(lap) { }
+
+	.site-branding {
+		padding: 0.5em 0;
+		@include mq(tablet) { padding: 1.5em 0 2em; }
+	}
+	
+
+	.site-title {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+		width: 100%;
+		margin: 0.1em 0;
+		@include mq(tablet) { width: 40%; margin:0; }
+
+
+		a {
+			display: block;
+			text-align: center;
+		}
+
+		img {
+			display: inline;
+		}
+
+	}
+
+	.nav-social {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		width: 100%;
+		@include mq(tablet) { width: 30%; text-align: left;}
+
+		a {
+			color:$primary;
+		}
+	}
+
+	.nav-lang {
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+		text-align: center;
+		@include mq(tablet) { width: 30%; text-align: right; }
+
+		.nav-lang__phone {
+			display: inline-block;
+			vertical-align: middle;
+			padding-right: 0.5em;
+			border-right: 1px solid #d7d7d7;
+		}
+		.nav-lang__menu {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+}

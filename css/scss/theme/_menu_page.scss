@@ -1,0 +1,119 @@
+//========================
+// visible menu section
+//========================
+
+.menu-wrapper {
+	background: #fff;
+	@include clearfix;
+
+	// &:nth-child(2n) .menu__image {
+	// 	float: right;
+	// }
+
+	// &:nth-child(2n) .menu__label {
+	// 	float: left;
+	// }
+}
+
+.menu__image {
+	// float: left;
+	vertical-align: middle;
+}
+
+.menu__label {
+	color: #fff;
+	position: relative;
+	vertical-align: middle;
+	margin: 1em 0;
+	@include mq(tablet) { margin: 0;}
+}
+
+//========================
+// hidden menu Selectors
+//========================
+
+.menu-dish-wrapper {
+	@include mq(tablet) { display:none; }
+}
+
+.menu-hidden {
+	@include mq(tablet) { display:none; }
+}
+
+.menu-show {
+	display:block;
+}
+
+//========================
+// hidden menu CSS
+//========================
+
+.menu-content {
+	text-align: left;
+	padding: 0 .5em;
+	@include mq(tablet) { padding: 0 1em;}
+}
+
+.menu-section--hidden {
+	@include mq(tablet) { margin: 4em 0; padding: 0 1em;}
+}
+
+
+.menu-select {
+	padding: 0 10%;	
+	display:none;
+	@include mq(tablet) { display: inline-block; }	
+
+	.menu-select__wrapper {
+		// @extend %vertical-center;
+	}
+
+	.menu-select__item {
+		border: 2px solid #b2b2b2;
+		padding: 0.5em;
+		margin-bottom: .5em;
+		background: none;
+		text-transform: uppercase;
+		display: block;
+		font-size: 1.1em;
+		width: 100%;
+		transition: .2s all;
+
+		&:hover {
+			border: 2px solid $primary;
+		}
+	}
+
+	.menu-select__item--active {
+		border: 2px solid $primary;
+	}
+
+}
+
+.menu-dish {
+
+
+	.menu-dish__description {
+		display: inline-block;
+		vertical-align: top;
+		width:90%;
+	}
+
+	.menu-dish__title {
+		text-transform: uppercase;
+		font-family: 'gotham_mediumregular';
+		margin: 0;
+	}
+
+	.menu-dish__price {
+		display: inline-block;
+		vertical-align: top;
+		width:10%;
+		text-align: right;
+	}
+
+}
+
+.dish-note {
+	// margin-bottom: 1.5em;
+}

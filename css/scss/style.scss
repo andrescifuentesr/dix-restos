@@ -1,0 +1,65 @@
+//structure
+@import 'structure/variables';
+@import 'structure/mixins';
+@import 'structure/template';
+@import 'structure/grid';
+@import 'structure/typography';
+
+// inc
+@import 'inc/fancybox';
+@import 'inc/flexslider';
+
+//theme
+@import 'theme/base/header';
+@import 'theme/base/footer';
+@import 'theme/base/page';
+@import 'theme/base/structure';
+@import 'theme/base/helpers';
+@import 'theme/base/menu';
+
+@import 'theme/loader';
+@import 'theme/menu_social';
+@import 'theme/language';
+@import 'theme/index';
+@import 'theme/contact';
+@import 'theme/reservation';
+@import 'theme/photos';
+@import 'theme/menu_page';
+@import 'theme/locals';
+@import 'theme/privatisation';
+@import 'theme/form';
+@import 'theme/restaurant';
+@import 'theme/newsletter';
+@import 'theme/press';
+
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+html {
+  @if $typl8-custom-font {
+    font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-custom-font, $typl8-font-family;
+  } @else {
+    font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-font-family;
+  }
+}
+
+body {
+	color: $typl8-copy-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	// font-family: brandon_grotesquebold;
+	font-weight: normal;
+}
+
+a {
+	text-decoration:none;
+	color: $typl8-copy-color;
+	font-family: 'gotham_bookregular';
+	font-weight: normal;
+}
+

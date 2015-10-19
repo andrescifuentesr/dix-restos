@@ -1,0 +1,154 @@
+//========================
+// local general structure
+//========================
+.local__item {
+	display: inline-block;
+	vertical-align:top;
+	width: 100%;
+	@include mq(tablet) { width:50%; }
+	@include mq(lap) { width:50%; }
+	@include mq(desk) { }
+}
+
+
+//========================
+// local item structure
+//========================
+.local-image {
+	position: relative;
+	vertical-align:middle;
+
+	&::after {
+			content: '';
+			position: absolute;
+			border-left: none;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+}
+
+.local__item:nth-child( 4n-5 ) .local-image,
+.local__item:nth-child( 4n-4 ) .local-image
+{
+
+	// @include mq(lap) {
+		&::after {
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-right: 10px solid #fff;
+			border-left: none;
+			top: 50%;
+			right: 0;
+		}
+	// }
+}
+
+.local__item:nth-child( 4n-7 ) .local-image,
+.local__item:nth-child( 4n-6 ) .local-image
+{
+	// @include mq(lap) {
+		order: 1;
+
+		&::after {
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-left: 10px solid #fff;
+			border-right: none;
+			left: 0;
+		}
+	// }
+}
+
+// .local__item:nth-child( 2n-1 ) .local-image
+// {
+// 	@include mq(tablet) {
+// 		order: 1;
+// 	}
+// }
+
+.local-label {
+	position: relative;
+	background:#fff;
+	vertical-align:middle;
+	//flexbox
+	justify-content:center;
+	/* I needed to do this in IE10/11 to get it to horizontally center */
+	align-items:center; 
+	/* For Flexbox - make the direct descendant divs content displayed in columns */
+	display:flex;
+	flex-direction:column;
+
+	.local--legend {
+		width: 90%;
+		padding: 0 10%;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		border-color: transparent;
+		padding: 0.5em 0;
+		transition: .2s all;
+		@include mq(lap) { width: 60%; margin: 0 20%; }
+	}
+
+	h2 {
+		margin: 0;
+		line-height: 1.5em;
+		font-size: 1.35em;
+		font-family: 'gotham_mediumregular';
+	}
+}
+
+.local__item:nth-child( 4n-7 ) .local-label,
+.local__item:nth-child( 4n-6 ) .local-label
+// .local__item:nth-child( 4n-5 ) .local-label,
+// .local__item:nth-child( 4n-4 ) .local-label
+{
+	float:left;
+}
+
+//========================
+// Hover effect
+//========================
+.local-image__description {
+	width: 100%;
+	@include mq(tablet) { display:none; font-size: .75em; padding: 0 .25em; }
+	@include mq(lap) { font-size: 1em; padding: 0 1em; }
+}
+
+.local-item-wrapper {
+	padding-top: 0.5em;
+	background:#fff;
+	@include mq(tablet) { 
+		display:flex;
+		padding-top: 0;
+
+		&:hover {
+
+			.local-image__description {
+				display: block;
+				color: #fff;
+				line-height: 1.2em;
+				z-index: 9999;
+				transition: .2s all;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.overlay {
+				position: absolute;
+				width:100%;
+				height: 100%;
+				top:0;
+				background: rgba(0, 0, 0, 0.4);
+				transition: .3s all;
+			}
+
+			.local--legend {
+				padding: 1em 0;
+				border-color: inherit;
+			}
+		}
+	}
+}
+

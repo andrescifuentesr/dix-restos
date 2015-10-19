@@ -1,0 +1,43 @@
+.module-newsletter {
+	display: none;
+	background: url('../../../img/svg/cube.svg') repeat #efe8e8;
+	padding: 3em 5em;
+	width: 30em;
+	// color:$blue-principal;
+	// @include mq(tablet) {padding: 3em 1em; width: 370px; text-align: center;}
+	// @include mq(phone) {padding: 3em 1em; width: 370px; text-align: center;}
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 2em;
+	}
+
+	ul {
+		margin: 0;
+	}
+
+	.sml_email, .sml_submit {
+		float: left;
+		@include mq(tablet) {float: none; }
+		@include mq(phone) {float: none; }
+	}
+
+	input[type="text"] {
+		margin-right: 0.5em;
+	}
+
+	input[type="submit"] {
+		border: 2px solid;
+		border-color: inherit;
+		font-size: 1em;
+		text-transform: uppercase;
+		// padding: .4em 1em .3em 3em;
+		padding: .4em 1em .3em 1em;
+		background-color:transparent;
+		transition: 0.2s background ease-in;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+//========================
+// first section
+//========================
+.privatisation-top {
+	background: #fff;
+}
+
+.privatisation-top__header {
+	position:relative;
+	color:#fff;
+
+	h1 {
+		margin: 0;
+		font-size: 1em;
+	}
+}
+
+.privatisation-top__content {
+	background: #fff;
+	padding: .5em ;
+	@include mq(tablet) { }
+	@include mq(lap) { font-size: 1.25em; padding: 2em 0.75em 0;}
+	@include mq(desk) { padding: 3em 3em; }
+}
+
+
+.privatisation-bottom__content {
+	font-family: 'gotham_lightregular';
+	vertical-align: middle;
+	@include mq(tablet) { }
+	@include mq(lap) { font-size: 1.1em;}
+	@include mq(desk) { margin-top: 1em; }
+
+	img {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+
+//========================
+// last section
+//========================
+
+.privatisation-bottom__image {
+	vertical-align: middle;
+}
+
+
+.privatisation-bottom__general {
+	background: #fff;
+	position: relative;
+	text-align: center;
+	font-size: 1.15em;
+
+	.wrapper--center {
+		width: 100%;
+		padding: 0 0.5em;
+		@extend %vertical-center;
+	}
+
+	.privatisation-legend__top {
+		margin-bottom: 1em;
+	}
+
+	.privatisation-legend__bottom {
+		position: relative;
+		padding-top: 1em;
+
+		p {margin-bottom: 0;}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 50%;
+			margin: 0 25%;
+			border-top: 1px solid;
+			border-color: inherit;
+		}
+	}
+}
+
+
+
+.privatisation-bottom {
+	background: #fff;
+	margin-bottom: 1em;
+}
+
+.privatisation-bottom__figure {
+	color: #fff;
+	position: relative;
+}

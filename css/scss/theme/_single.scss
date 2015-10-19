@@ -1,0 +1,19 @@
+.content-wrapper {
+	width: 100%;
+	// @include mq(tablet) {}
+	// @include mq(lap) { width: 80%; margin-right: 5%;}
+	@include mq(desk) { width: 60%; margin-right: 5%; float:left;}
+}
+
+.section_level {
+	width: 100%;
+	margin-top: 1em;
+	// @include mq(tablet) { width: 60%; margin-right: 5%;}
+	// @include mq(lap) { width: 15%; }
+	@include mq(desk) { width: 35%;   margin-top: 0; float:left;}
+
+	.section_level--item {
+		@include mq(desk) { min-height: 180px; }	
+	}
+
+}

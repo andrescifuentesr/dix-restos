@@ -1,0 +1,110 @@
+//========================
+// legend
+//========================
+
+%legend {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-color: inherit;
+	padding: 1em 0;
+	text-transform: uppercase;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.legend {
+	@extend %legend;
+}
+
+.legend-white {
+	color: #fff;
+	@extend %legend;
+}
+
+.legend--grey {
+	color: #666;
+	@extend %legend;
+}
+
+.legend--inline-block {
+	color: #666;
+	display: inline-block;
+	width: auto;
+	margin: 0 auto;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-color: inherit;
+	padding: 1em 0;
+	text-transform: uppercase;
+	transition: .3s all;
+
+	&:hover {
+		padding: 1.5em 0;
+	}
+}
+
+.legend--button {
+	font-family: 'gotham_mediumregular';
+	font-size: 1.1em;
+	@include mq(tablet) { font-size: 1.35em;}
+}
+
+
+.separator {
+	position: relative;
+	padding-top: 1em;
+	width: 4em;
+	margin: 0 auto;
+	border-top: 1px solid;	
+}
+
+.filter-overlay {
+	position: absolute;
+	width:100%;
+	height: 100%;
+	top:0;
+	background: rgba(0, 0, 0, 0.4);
+	transition: .3s all;
+}
+
+
+
+%center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+%vertical-center {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+%horizontal-center {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}

@@ -1,0 +1,39 @@
+// SET UP YOUR VARIABLES IN THIS FILE
+//Breakpoints
+
+// $max-width : 1250px;
+$max-width : 1060px;
+
+$break-point-tablet : 600px;
+$break-point-lap : 800px;
+$break-point-desk : 1061px;
+
+//Breakpoints grid 
+$breakpoints: (
+	'phone' '(max-width: 600px)',
+	'tablet' '(min-width: 600px) and (max-width: 800px)',
+	'lap' '(min-width: 800px) and (max-width: 1000px)',
+	'desk' '(min-width: 1000px)'
+);
+
+// Colours
+// ------------------------------------------------------------
+
+$primary							: #cd0001;
+$secondary							: #404040;
+$tertiary							: #FF0000;
+
+// Assign colours to variable roles
+$base-color							: $primary;
+$heading-color						: $secondary;
+$secondary-heading-color			: $tertiary;
+
+//headers
+$typl8-heading-color: $secondary;
+$typl8-copy-color: #404040 !default;
+
+// Links
+$action								: $primary;
+$action-respond						: $secondary;
+$secondary-action					: $action-respond;
+$secondary-action-respond			: $action;

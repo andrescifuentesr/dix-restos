@@ -1,0 +1,58 @@
+.page-template-template-photos .content-area {
+	background-color: rgba(0,0,0,0.8);
+
+	.site-main {
+		width: 98%;
+		margin: 0 1%;
+		padding: .5em 0;
+		@include mq(lap) { width: 95%; margin: 0 2.5%; padding: 1em 0;}
+		@include mq(tablet) { width: 90%; margin: 0 5%; padding: 2em 0;}
+		@include mq(desk) { width: 100%; margin: 0 auto; padding: 3em 0;}
+	}
+
+	.flexslider {
+		padding: 1.5em 1em 4em;
+	}
+
+	.flexslider .slides img {
+	  // width: 100%;
+	  max-width: 100%;
+	  margin: 0 auto;
+	}
+
+
+	.flex-control-paging li a {
+
+	}
+
+	.flex-control-paging li a:hover {
+		background: #a6a6a6;
+	}
+
+	.flex-control-paging li a.flex-active {
+		background: #a6a6a6;
+	}
+
+
+	.flex-control-paging li a {
+		border: 2px solid #a6a6a6;
+	}
+
+	.flex-direction-nav a.flex-prev {
+		background: url('../../../img/svg/button-prev-dark.svg') no-repeat;
+	}
+
+	.flex-direction-nav a.flex-next {
+		background: url('../../../img/svg/button-next-dark.svg') no-repeat;
+	}
+
+
+	.flexslider:hover .flex-direction-nav .flex-prev {
+		left: 50px;
+	}
+
+	.flexslider:hover .flex-direction-nav .flex-next {
+		right: 50px;
+	}
+
+}

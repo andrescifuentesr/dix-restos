@@ -1,0 +1,86 @@
+//========================
+// first section
+//========================
+.contact-top {
+	margin-bottom: 1em;
+	background-color: #fff;
+	// margin-left: -24px;
+	// height:20em;
+}
+
+.contact-top__header {
+	position:relative;
+	color:#fff;
+
+	h1 {
+		margin: 0;
+		font-size: 1em;
+	}
+}
+
+.contact-top__general {
+	background: #fff;
+	height:13em;
+	position: relative;
+	text-align: center;
+	font-size: 1.15em;
+
+	.wrapper--center {
+		width: 80%;
+		margin: 0 10%;
+		@extend %vertical-center;
+	}
+
+	.contact-legend__top {
+		margin-bottom: 1em;
+	}
+
+	.contact-legend__bottom {
+		position: relative;
+		padding-top: 1em;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 50%;
+			margin: 0 25%;
+			border-top: 1px solid;
+			border-color: inherit;
+		}
+	}
+}
+
+.contact-top__map {
+	// height:20em;
+	// background: green;
+	border: 16px solid #fff;
+}
+
+//========================
+// last section
+//========================
+.contact-bottom {
+	background: #fff;
+}
+
+.contact-bottom__figure {
+	color: #fff;
+	position: relative;
+	vertical-align: middle;
+}
+
+.contact-bottom__content {
+	font-family: 'gotham_lightregular';
+	font-size: 1.1em;
+	margin-top: 1em;
+	vertical-align: middle;
+	@include mq(lap) { padding: 0 1em; }
+
+	img {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+

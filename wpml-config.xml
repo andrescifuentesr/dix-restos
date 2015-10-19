@@ -1,0 +1,44 @@
+<wpml-config>
+  <admin-texts>
+    <key name="redux_options">
+      <key name="home-image-caption"/>
+      <key name="home-description-textarea"/>
+      <key name="home-description-button"/>
+      <key name="home-reservation-link-label"/>
+      <key name="home-contact-link-label"/>
+      <key name="home-contact-link"/>
+      <key name="home-menu-link-label"/>
+      <key name="home-menu-link"/>
+      <key name="footer-phone"/>
+      <key name="footer-adress"/>
+      <key name="footer-schedules"/>
+      <key name="footer-googlemap"/>
+      <key name="footer-restaurant-1"/>
+      <key name="footer-restaurant-2"/>
+      <key name="footer-restaurant-3"/>
+      <key name="footer-restaurant-4"/>
+      <key name="footer-restaurant-5"/>
+      <key name="footer-restaurant-6"/>
+      <key name="footer-restaurant-7"/>
+      <key name="footer-restaurant-8"/>
+      <key name="footer-restaurant-9"/>
+      <key name="footer-copyright"/>
+      <key name="footer-mention"/>
+      <key name="home-opt-slides"/>
+      <key name="menu-section-carte-label"/>
+      <key name="menu-section-daily-label"/>
+      <key name="menu-section-brunch-label"/>
+      <key name="menu-section-boissons-label"/>
+      <key name="menu-section-special-label"/>
+    </key>
+  </admin-texts>
+  <custom-types>
+    <custom-type translate="1">restaurant</custom-type>
+    <custom-type translate="1">press</custom-type>
+    <custom-type translate="1">menu-section-carte</custom-type>
+    <custom-type translate="1">menu-section-day</custom-type>
+    <custom-type translate="1">menu-section-brunch</custom-type>
+    <custom-type translate="1">menu-section-drink</custom-type>
+    <custom-type translate="1">menu-section-special</custom-type>
+  </custom-types>
+</wpml-config>

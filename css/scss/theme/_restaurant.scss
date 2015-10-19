@@ -1,0 +1,146 @@
+//========================
+// first section
+//========================
+
+.restaurant-block-1-3 {
+	background: #fff;	
+}
+
+.restaurant-top {
+	margin-bottom: 1em;
+	background: #fff;
+}
+
+.restaurant-top__header {
+	position:relative;
+	color:#fff;
+
+	h1 {
+		margin: 0;
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+}
+
+.restaurant-top__general {
+	background: #fff;
+	height:10em;
+	position: relative;
+	text-align: center;
+	font-size: 1.35em;
+	background: #eeeeee;
+
+	.wrapper--center {
+		width: 80%;
+		margin: 0 10%;
+		@extend %vertical-center;
+	}
+
+	.restaurant-legend__top {
+		margin-bottom: 1em;
+	}
+
+	.restaurant-legend__bottom {
+		position: relative;
+		padding-top: 1em;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 50%;
+			margin: 0 25%;
+			border-top: 1px solid #000;
+		}
+	}
+}
+
+.restaurant-top__content {
+	// background: #fff;
+	text-align: justify;
+	padding: 1em 1em 0.5em;
+	@include mq(tablet) { padding: 2em 2em 0.5em; }
+	@include mq(desk) { padding: 3em 3em 0.5em; }
+}
+
+
+//========================
+// second section
+//========================
+.restaurant-block-2-3 {
+	margin: 1em 0;
+	background: #fff;
+	// padding: 2em 4em;
+
+	.restaurant-middle__content {
+		text-align: justify;
+		padding: 1em 1em 0.5em;
+		@include mq(tablet) { padding: 2em 2em 0.5em; }
+		@include mq(desk) { padding: 4em 3em 0.5em;}
+	}
+
+	.restaurant-image-bottom {
+		margin-top: 0.5em;
+	}
+}
+
+//========================
+// third section
+//========================
+.restaurant-block-3-3 {
+	background: #fff;
+}
+
+.restaurant-bottom__image {
+	position: relative;
+	vertical-align: middle;
+
+	&::after {
+		content: '';
+		position: absolute;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		border-right: 10px solid #fff;
+		top: 50%;
+		right: 0;
+	}
+}
+
+.restaurant-bottom__content {
+	vertical-align: middle;
+	padding: 0 2em;
+	@include mq(lap) { padding: 0 4em; }
+	@include mq(desk) { padding: 2em 4em; }
+	
+	h4 {
+		margin: 1em 0;
+		padding: 1em 0;
+		position: relative;
+		display: inline-block;
+
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 50%;
+			margin: 0 25%;
+			border-top: 1px solid;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 50%;
+			margin: 0 25%;
+			border-top: 1px solid;
+		}
+	}
+
+}
+
+
+
