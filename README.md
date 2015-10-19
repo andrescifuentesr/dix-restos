@@ -1,14 +1,17 @@
-=== Dix Restos ===
+Dix Restos
+===
 
 Theme make for Food2Vous. 
 This theme needs Types and Redux plugins.
 
-== Changelog ==
+Changelog
+===
 
 = 1.3 - October 19 2015 =
 * Initial release
 
-== Credits ==
+Credits
+===
 
 Design by Antoine Marinot: http://amarinotportfolio.fr
 Development by Cuaybroweb: http://www.cuyabroweb.com
